@@ -1,17 +1,24 @@
 from django.db import models
 
 class Book(models.Model):
-    title = models.CharField(max_length=30, unique=True)
-    password = models.CharField(max_length=300)
-    email = models.CharField(max_length=80, unique=True)
-    phone_number = models.CharField(max_length=11, unique=True)
-    birthday = models.DateField(blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    last_login = models.DateTimeField(auto_now=True)
-    blocked_status = models.BooleanField(default=False, verbose_name="Blocked")
-    blocked_at = models.DateTimeField(auto_now=False, blank=True)
-    delete_status = models.BooleanField(default=False, verbose_name="Deleted")
-    deleted_at = models.DateTimeField(auto_now=False, blank=True)
+    title = models.CharField(max_length=200)
+    goodreads_link = models.CharField(max_length=300)
+    series = models.CharField(max_length=80)
+    cover_link = models.CharField(max_length=200, unique=True)
+    author = models.CharField(max_length=100)
+    author_goodreads_link = models.CharField(max_length=200)
+    goodreads_average_rating = models.FloatField()
+    number_of_pages = models.IntegerField()
+    date_published = models.CharField(max_length=200)
+    publisher = models.CharField(max_length=200)
+    genre_and_votes = models.CharField(max_length=200)
+    isbn = models.CharField(max_length=50)
+    isbn13 = models.CharField(max_length=50)
+    awards = models.CharField(max_length=1500)
+    amazon_redirect_link = models.CharField(max_length=250)
+    recommended_books = models.CharField(max_length=250)
+    books_in_series= models.CharField(max_length=250)
+    description = models.CharField(max_length=10000)
 
     def __str__(self):
-        return self.username
+        return self.title
