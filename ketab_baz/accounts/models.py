@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class User(models.Model):
     username = models.CharField(max_length=30, unique=True)
     password = models.CharField(max_length=300)
@@ -15,6 +16,7 @@ class User(models.Model):
 
     def __str__(self):
         return self.username
+
 
 class Critic(models.Model):
     username = models.CharField(max_length=30, unique=True)

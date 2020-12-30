@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Book(models.Model):
     title = models.CharField(max_length=200)
     goodreads_link = models.CharField(max_length=300)
@@ -17,7 +18,7 @@ class Book(models.Model):
     awards = models.CharField(max_length=1500)
     amazon_redirect_link = models.CharField(max_length=250)
     recommended_books = models.CharField(max_length=250)
-    books_in_series= models.CharField(max_length=250)
+    books_in_series = models.CharField(max_length=250)
     description = models.CharField(max_length=10000)
 
     def __str__(self):

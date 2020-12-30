@@ -57,7 +57,7 @@ ROOT_URLCONF = 'ketab_baz.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'accounts/templates/accounts'],
+        'DIRS': [BASE_DIR / 'accounts/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -81,9 +81,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'ketab-baz',
         'USER': 'postgres',
-        'PASSWORD': 'Sepamir110',
+        'PASSWORD': 'forfour',
         'HOST': 'localhost',
-        'PORT': '5433',
+        'PORT': '5432',
     }
 }
 
