@@ -34,7 +34,7 @@ def register(request):
 def user_register(username, password, email, phone_number, birthday):
     user = User.objects.filter(username=username) | User.objects.filter(
         phone_number=phone_number) | User.objects.filter(email=email)
-    if user is None:
+    if not user:
         response = {
             'response': 'success',
             'message': 'Register Successful'
