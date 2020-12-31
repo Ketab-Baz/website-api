@@ -26,15 +26,15 @@ def register(request):
         birthday = request.POST['birthday']
         account_type = request.POST['account_type']
         if account_type == 'user':
-            user_register(username, password, email, phone_number, birthday)
+            return user_register(username, password, email, phone_number, birthday)
         elif account_type == 'critic':
-            critic_register(username, password, email, phone_number, birthday)
+            return critic_register(username, password, email, phone_number, birthday)
 
 
 def user_register(username, password, email, phone_number, birthday):
     user = User.objects.filter(username=username) | User.objects.filter(
         phone_number=phone_number) | User.objects.filter(email=email)
-    if user is not None:
+    if user is None:
         response = {
             'response': 'success',
             'message': 'Register Successful'
@@ -52,7 +52,7 @@ def user_register(username, password, email, phone_number, birthday):
 def critic_register(username, password, email, phone_number, birthday):
     user = Critic.objects.filter(username=username) | Critic.objects.filter(
         phone_number=phone_number) | Critic.objects.filter(email=email)
-    if user is not None:
+    if not user:
         response = {
             'response': 'success',
             'message': 'Register Successful'
