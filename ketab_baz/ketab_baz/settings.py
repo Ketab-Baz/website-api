@@ -81,9 +81,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'ketab-baz',
         'USER': 'postgres',
-        'PASSWORD': 'forfour',
+        'PASSWORD': 'Sepamir110',
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': '5433',
     }
 }
 
