@@ -1,19 +1,22 @@
 from django.http import JsonResponse
 from .models import User, Critic
 from django.contrib import auth
+from django.views.decorators.csrf import csrf_exempt
 
 
+@csrf_exempt
 def login(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
         account_type = request.POST['account_type']
         if account_type == 'user':
-            user_login(request, username, password)
+            return user_login(request, username, password)
         elif account_type == 'critic':
-            critic_login(request, username, password)
+            return critic_login(request, username, password)
 
 
+@csrf_exempt
 def register(request):
     if request.method == 'POST':
         username = request.POST['username']
